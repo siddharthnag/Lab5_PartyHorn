@@ -1,8 +1,8 @@
 // Volume Functionality -------------------------------------------------
 // volume DOM variables
-const volume_number = document.getElementById("volume-number");
-const volume_slider = document.getElementById("volume-slider");
-const volume_image = document.getElementById("volume-image");
+let volume_number = document.getElementById("volume-number");
+let volume_slider = document.getElementById("volume-slider");
+let volume_image = document.getElementById("volume-image");
 
 // volume event listeners
 volume_number.addEventListener("input", updateSlider);
@@ -42,11 +42,11 @@ function updateVolumeImage() {
 
 // Audio Functionality ---------------------------------------------------
 // audio DOM variables
-const audio_selection = document.getElementById("audio-selection");
-const radio_air_horn = document.getElementById("radio-air-horn");
-const radio_car_horn = document.getElementById("radio-car-horn");
-const radio_party_horn = document.getElementById("radio-party-horn");
-const sound_image = document.getElementById("sound-image");
+let audio_selection = document.getElementById("audio-selection");
+let radio_air_horn = document.getElementById("radio-air-horn");
+let radio_car_horn = document.getElementById("radio-car-horn");
+let radio_party_horn = document.getElementById("radio-party-horn");
+let sound_image = document.getElementById("sound-image");
 
 // audio event listener
 audio_selection.addEventListener("change", updateImage);
@@ -70,10 +70,10 @@ function updateImage() {
 
 // Form/Sound Functionality ----------------------------------------------------
 // form/sound DOM variables
-const party_horn_form = document.getElementById("party-horn-form");
-const horn_sound = document.getElementById("horn-sound");
-const honk_button = document.getElementById("honk-btn");
-const honk_btn_container = document.getElementById("honk-btn-container");
+let party_horn_form = document.getElementById("party-horn-form");
+let horn_sound = document.getElementById("horn-sound");
+let honk_button = document.getElementById("honk-btn");
+let honk_btn_container = document.getElementById("honk-btn-container");
 
 // form/sound event listener
 party_horn_form.addEventListener("submit", playAudio);

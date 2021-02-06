@@ -11,11 +11,13 @@ volume_slider.addEventListener("change", updateNumber);
 // volume functions
 function updateSlider() {
     volume_slider.value = volume_number.value;
+    horn_sound.volume = volume_slider.value / 100;
     updateVolumeImage();
 }
 
 function updateNumber() {
     volume_number.value = volume_slider.value;
+    horn_sound.volume = volume_slider.value / 100;
     updateVolumeImage();
 }
 
@@ -23,15 +25,18 @@ function updateVolumeImage() {
     if (volume_number.value == 0) {
         volume_image.src = "./assets/media/icons/volume-level-0.svg";
         alt = "No Volume";
-        horn_sound.disabled = true;
+        honk_button.disabled = true;
     } else if (volume_number.value <= 33) {
         volume_image.src = "./assets/media/icons/volume-level-1.svg";
         alt = "Low Volume";
+        honk_button.disabled = false;
     } else if (volume_number.value <= 66) {
         volume_image.src = "./assets/media/icons/volume-level-2.svg";
         alt = "Medium Volume";
+        honk_button.disabled = false;
     } else if (volume_number.value < 100) {
         alt = "High Volume";
+        honk_button.disabled = false;
     } 
 }
 
@@ -51,7 +56,7 @@ function updateImage() {
     if (radio_air_horn.checked == true) {
         sound_image.src = "./assets/media/images/air-horn.svg";
         sound_image.alt = "Air Horn";
-        honk_button.src = "./assets/media/audio/air-horn.mp3";
+        horn_sound.src = "./assets/media/audio/air-horn.mp3";
     } else if (radio_car_horn.checked == true) {
         sound_image.src = "./assets/media/images/car.svg";
         sound_image.alt = "Car Horn";
